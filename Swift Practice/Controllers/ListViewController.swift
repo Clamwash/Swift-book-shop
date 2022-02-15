@@ -12,31 +12,52 @@ import RxCocoa
 class ListViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var cartButton: UIBarButtonItem!
     
-    let books = Observable.just(BookService().createArray())
-    private let disposeBag = DisposeBag()
+    private var book: Book?
+    private let books = Observable.just(BookService().createArray())
     
-    var book: Book?
+    private var numberOfItemsInCart: Int {
+        get {
+            return ShoppingCart.sharedCart.books.value.count
+        }
+    }
+    
+    private let disposeBag: DisposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupCellConfiguration()
         setupCellTapHandling()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        cartButton.title = "\u{1F6D2}" + "(\(numberOfItemsInCart))"
     }
     
 }
+
+//MARK: - Segue Preparation
 
 extension ListViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToDetail" {
             let destinationVC = segue.destination as! DetailViewController
+            destinationVC.book = self.book
             destinationVC.bookTitle = self.book?.title
             destinationVC.bookAuthor = self.book?.author
             destinationVC.bookImage = self.book?.image
             destinationVC.bookDescription = self.book?.description
         }
+        
+        if segue.identifier == "goToCart" {
+            _ = segue.destination as! CartViewControler
+        }
+        
+        
     }
     
 }
@@ -48,12 +69,14 @@ extension ListViewController {
     func setupCellConfiguration() {
         books.bind(to: tableView
         .rx
-        .items(cellIdentifier: BookCell.Identifier,
+        .items(cellIdentifier: BookCell.listCellId,
                cellType: BookCell.self)) {
             row,
             book,
             cell in cell.setBook(book: book)
         }.disposed(by: disposeBag)
+        
+       
     }
     
     func setupCellTapHandling() {
@@ -72,6 +95,18 @@ extension ListViewController {
     }
     
 }
+
+//MARK: - Cart
+
+extension ListViewController {
+    @IBAction func cartButtonPressed(_ sender: UIBarButtonItem) {
+        performSegue(withIdentifier: "goToCart", sender: self)
+    }
+}
+
+
+
+
 
 
 
