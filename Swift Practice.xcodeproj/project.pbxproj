@@ -17,6 +17,8 @@
 		6A218E362773C7AC0078BC7E /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A218E352773C7AC0078BC7E /* BookCell.swift */; };
 		6A218E382774A1AC0078BC7E /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A218E372774A1AC0078BC7E /* DetailViewController.swift */; };
 		6A218E3D2774E7B40078BC7E /* BookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A218E3C2774E7B30078BC7E /* BookService.swift */; };
+		6A3F53D0279EFD7600E04FD4 /* CartViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A3F53CF279EFD7600E04FD4 /* CartViewControler.swift */; };
+		6AE167E527A1A6E7008E450F /* ShoppingCart.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE167E427A1A6E7008E450F /* ShoppingCart.swift */; };
 		AAA707A8DFFAB2C76953E671 /* libPods-Swift Practice.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADDF332C72937B66C4466F94 /* libPods-Swift Practice.a */; };
 /* End PBXBuildFile section */
 
@@ -53,7 +55,9 @@
 		6A218E332773C54F0078BC7E /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		6A218E352773C7AC0078BC7E /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
 		6A218E372774A1AC0078BC7E /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		6A218E3C2774E7B30078BC7E /* BookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookService.swift; sourceTree = "<group>"; };
+		6A218E3C2774E7B30078BC7E /* BookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookService.swift; sourceTree = "<group>"; tabWidth = 4; };
+		6A3F53CF279EFD7600E04FD4 /* CartViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewControler.swift; sourceTree = "<group>"; };
+		6AE167E427A1A6E7008E450F /* ShoppingCart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingCart.swift; sourceTree = "<group>"; };
 		ADDF332C72937B66C4466F94 /* libPods-Swift Practice.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Swift Practice.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -97,7 +101,6 @@
 				00ACD7572A4FAE83D76C0A81 /* Pods-Swift Practice.debug.xcconfig */,
 				556C3D38197F4179C0505BC3 /* Pods-Swift Practice.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -141,6 +144,7 @@
 			children = (
 				6A218E0727737B580078BC7E /* ListViewController.swift */,
 				6A218E372774A1AC0078BC7E /* DetailViewController.swift */,
+				6A3F53CF279EFD7600E04FD4 /* CartViewControler.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -151,6 +155,7 @@
 				6A218E332773C54F0078BC7E /* Book.swift */,
 				6A218E352773C7AC0078BC7E /* BookCell.swift */,
 				6A218E3C2774E7B30078BC7E /* BookService.swift */,
+				6AE167E427A1A6E7008E450F /* ShoppingCart.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -327,6 +332,8 @@
 				6A218E382774A1AC0078BC7E /* DetailViewController.swift in Sources */,
 				6A218E0627737B580078BC7E /* SceneDelegate.swift in Sources */,
 				6A218E362773C7AC0078BC7E /* BookCell.swift in Sources */,
+				6AE167E527A1A6E7008E450F /* ShoppingCart.swift in Sources */,
+				6A3F53D0279EFD7600E04FD4 /* CartViewControler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
